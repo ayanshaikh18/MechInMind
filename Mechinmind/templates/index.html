@@ -1,19 +1,198 @@
-<!DOCTYPE html>
+{% extends 'layout/base.html' %}
 {% load static %}
+
 {% load markdown_extras %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Articles</h1>
-{% for article in articles %}
-    <h3>{{ article.Title }}</h3>
-    <h5>{{ article.Views }} Views</h5>
-    {{ article.Description | markdown | safe | truncatechars:100 }}
-    <a href="/articles/view/{{ article.Id }}">Read More</a>
-    <hr>
-{% endfor %}
-</body>
-</html>
+{% block content %}
+    <!--caraouol home starts--------------------->
+
+    <div id="Home1" class="carousel slide my-n5" data-ride="carousel">
+        <section>
+            <div class="parallax-list-main">
+                <br><br><br><br><br>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="top-para-content mt-5 text-center">
+
+                            <img src="{% static 'images/logo1.png' %}" class="img-fluid" alt="not supported">
+
+                            <!--<p class="para-p2 mt-5">
+                                MECHINMIND
+                            </p>-->
+                            <p class="para-p1">We upload 5 articles everyday covering everything about
+                                mechanical engineering to keep you aware, posted and getting pragmatically
+                                smarter every day for the practical real business world outside, by just
+                                spending 20 to 25 minutes here daily. <br>Welcome to MechinMind!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="signuppart">
+
+        </div>
+    </div>
+
+    <!--carasoul home-------------------------------------->
+    <br><br><br>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                </div>
+                <div class="col-md-4">
+                    <div class="daily-feed">
+                        <div>
+                            Daily
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="date" name="date" id="date" value="{{ date }}">
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4 mt-5">
+                        <div class="number">
+                            <p class="inner-number">{{ forloop.counter }}</p>
+                        </div>
+                        <div class="images-portion">
+                            <a href="dailyArticle.html"><img src="{{ article.CoverPhoto.url }}"
+                                                             class="img-fluid images"
+                                                             alt="{{ article.CoverPhoto }}"></a>
+                            <br><br>
+                            <p class="heading">{{ article.Title }}</p>
+                            <div class="text">
+                                {{ article.ShortDescription }}
+                            </div>
+                            <div class="read-div">
+                                <button type="button" class="read" name='read'
+                                        onclick="location.href='/articles/view/{{ article.Id }}';">Read
+                                </button>
+                            </div>
+
+                            <br><br>
+                            <hr>
+                            <br><br><br>
+
+                            <div class="like-div">
+                                <button class="like"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                <span>{{ article.Views }}</span>
+                            </div>
+                            <div class="share-div">
+                                <button class="share"><i class="fa fa-share-square-o" aria-hidden="true"></i> Share
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br><br>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <br><br><br>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="read-cate">
+                        Top 5 Most Viewed Articles
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+
+            <br><br><br>
+            <div class="row">
+                {% for article in top5Articles %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ article.CoverPhoto.url }}" alt="Card image cap">
+                                <br><br>
+                                <p class="card-text">
+                                    {{ article.Title }}
+                                    <br>
+                                    <i class="fa fa-eye"></i> {{ article.Views }}
+                                </p>
+                                <p>
+
+                                </p>
+                                <button onclick="location.href='/articles/view/{{ article.Id }}'" class="read sub">Read
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <br><br>
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="article text-center">
+                        <p class="que">Why 5 Articles Daily ?</p>
+                        <!-- <p class="que-text">Exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.Exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p> -->
+                        <button class="read art-read my-2 mx-auto"
+                                onclick="location.href='/articles/chunkConcept'">Read
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+            <br><br>
+
+        </div>
+    </section>
+
+    <br><br>
+{% endblock %}
+
+{% block Scripts %}
+    <script>
+        $(document).ready(function () {
+            Date.prototype.toDateInputValue = (function () {
+                var local = new Date(this);
+                local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+                return local.toJSON().slice(0, 10);
+            });
+
+            var field = 'date';
+            var url = window.location.href;
+            if (url.indexOf('?' + field + '=') != -1) ;
+            else if (url.indexOf('&' + field + '=') != -1) ;
+            else
+                $('#date').val(new Date().toDateInputValue());
+
+
+        });
+        $("#date").on("change", function () {
+            window.location.href = "/articles/list/?date=" + $(this).val()
+        })
+    </script>
+{% endblock %}

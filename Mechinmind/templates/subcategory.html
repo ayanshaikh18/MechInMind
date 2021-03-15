@@ -1,0 +1,92 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block HeadContent %}
+    <link rel="stylesheet" href="{% static 'css/style_section.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="Home1" class="my-n5 carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <section>
+                    <div class="parallax-list-main-1"
+                         style="background-image: url('/uploads/{{ subcategory.CoverPhoto }}') !important;">
+                        <br><br><br><br><br>
+
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="top-para-content mt-5">
+                                    <br><br><br><br>
+                                    <p class="para-p2 mt-5">{{ subcategory.Name }}</p>
+                                    <p class="para-p1">{{ subcategory.Description }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--carasoul home ENDS----------->
+    <br><br>
+    <section class="my-5">
+        <div class="container my-5">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4">
+                        <div class="card my-2">
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ article.CoverPhoto.url }}" alt="Card image cap">
+                                <p class="card-text">{{ article.Title }}</p>
+                                <button onclick="location.href='/articles/view/{{ article.Id }}'" class="read sub">
+                                    Read
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            {% if articles.has_other_pages %}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if articles.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="/articles/getArticlesBySubCategories/{{ subcategory.Id }}?page={{ articles.previous_page_number }}">&laquo;</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                        {% endif %}
+                        {% for i in articles.paginator.page_range %}
+                            {% if articles.number == i %}
+                                <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="/articles/getArticlesBySubCategories/{{ subcategory.Id }}?page={{ i }}">{{ i }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if articles.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="/articles/getArticlesBySubCategories/{{ subcategory.Id }}?page={{ articles.next_page_number }}">&raquo;</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

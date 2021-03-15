@@ -1,0 +1,398 @@
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+
+#hambur {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    color: white;
+  }
+  
+  /*-----------------------------------------------------------------------*/
+  
+  .overlay2 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content2 {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  
+  .overlay2 a:hover, .overlay2 a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay2 .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  
+  /*-----------------------------------------------------------------------*/
+  
+  .overlay3 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content3 {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  
+  .overlay3 a:hover, .overlay3 a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay3 .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /*-----------------------------------------------------------------------*/
+  
+  .overlay4 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content4 {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  
+  .overlay4 a:hover, .overlay4 a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay4 .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  
+  /*-----------------------------------------------------------------------*/
+  
+  .overlay5 {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content5 {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  
+  .overlay5 a:hover, .overlay5 a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay5 .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+
+
+
+.parallax-list-main-1{
+    /* The image used */
+	/* Set a specific height */
+	min-height: 830px; 
+  
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.parallax-list-main-2{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) ), url(../images/collection/2.jpg);
+  
+	/* Set a specific height */
+	min-height: 830px; 
+  
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.parallax-list-main-3{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) ), url(../images/collection/3.jpg);
+  
+	/* Set a specific height */
+	min-height: 830px; 
+  
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.top-para-content{
+    padding: 25px;
+}
+
+.para-p1{
+    font-size: 17px;
+    font-weight: 700;
+    color:  #faac1d;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 601px) {
+	.para-p2{
+        font-size: 5vw;
+        color: white;
+        font-weight: 700;
+        text-align: center;
+    }
+	
+  }
+
+  
+  @media screen and (max-width: 600px) {
+    .para-p2{
+        font-size: 10vw;
+        color: white;
+        font-weight: 700;
+        text-align: center;
+    }
+  }
+
+  .carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+
+.card-text{
+    font-size:20px;
+    font-weight:700;
+    text-align: center;
+
+}
+
+.card{
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+button.read{
+    padding: 6px 10px;
+    display: inline-block;
+    text-align:center;
+    color: white;
+    background-color: #e8c264;
+    border: 1px solid #e8c264;
+    border-radius:10px;
+    outline: none;
+}
+
+
+button.read:hover{
+    background-color: white;
+    color: #e8c264;
+}
+
+button.sub{
+    margin-left: 42%;
+}
+
+
+
+@media screen and (min-width: 601px) {
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+	.overlay2 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay3 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay4 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay5 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+	
+}
+
+
+@media screen and (max-width: 600px) {
+  .overlay2 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay3 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay4 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay5 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+}

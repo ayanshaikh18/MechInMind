@@ -1,0 +1,120 @@
+/*--------footer starts here----------------*/
+
+
+.footer-section{
+    color: black;
+    background-color: whitesmoke;
+}
+
+
+.fp1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.fp3{
+   
+    text-align: center;
+}
+.fp3 .fa1{
+    text-decoration: none;
+    margin-left:10px ;
+    
+   
+}
+
+.fp4{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.fa-facebook-square{
+    font-size: 23px;
+    color: #3B5998;
+}
+
+.fp5{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.fa-linkedin-square{
+    color: #0e76a8;
+    font-size: 23px;
+}
+
+
+label{
+    color: white;
+}
+
+
+.right-cont{
+    background-color: #572ea8;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.right-p1{
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    
+}
+
+#questions{
+    width: 100%;
+    height: 150px;
+}
+
+#text-1::placeholder{
+    color: white;
+}
+
+
+#text-3::placeholder{
+    color: white;
+}
+
+#questions::placeholder{
+    color: white;
+}
+
+#submit-now{
+    outline: none;
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    background-color: 	#f14b59;
+}
+
+.back{
+
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../Images/spray.png);
+}
+
+.common-class{
+   color: white;
+    border: none;
+    background-color: #6743b0;
+}
+
+.under-footer{
+    text-align: center;
+}
+
+.under-footer a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+
+/*----------------------------footer ends here--------------------------------*/

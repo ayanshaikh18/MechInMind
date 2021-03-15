@@ -1,15 +1,122 @@
-<!DOCTYPE html>
+{% extends 'layout/base.html' %}
 {% load static %}
 {% load markdown_extras %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Articles</h1>
-<h3>{{ article.Title }}</h3>
-<h5>{{ article.Views }} Views</h5>
-{{ article.Description | markdown | safe }}
-</body>
-</html>
+
+{% block HeadContent %}
+    <link rel="stylesheet" href="{% static 'css/dailyarticle.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="daily-article">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+
+                <div class="col-md-10">
+
+                    <div class="sub sub-1">
+                        {{ article.SubCategory.Name }}
+                    </div>
+
+                    <div class="sub sub-2">
+                        {{ article.UploadDate }}
+                    </div>
+
+                    <br><br><br><br>
+
+                    {#                    <div class="row">#}
+                    {#                        <div class="col-md-12">#}
+                    {#                            <div class="category-div">#}
+                    {#                                <img src="{{ article.CoverPhoto.url }}" class="img-fluid img-5 img-shade" alt="not supported">#}
+                    {#                                <div class="centered">Heading</div>#}
+                    {#                            </div>#}
+                    {##}
+                    {#                            <div class="like">#}
+                    {#                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>#}
+                    {#                                <span>2,015</span>#}
+                    {#                            </div>#}
+                    {##}
+                    {#                            <div class="share">#}
+                    {#                                <i class="fa fa-share-square-o" aria-hidden="true"></i>#}
+                    {#                                <span>Share</span>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <br><br><br>#}
+
+                    <!--------------------------------section 1 start ------------------------------->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="blog-details">
+
+                                <div class="blog-1">
+                                    <img src="{{ article.CoverPhoto.url }}" class="img-fluid img-blog img-shade"
+                                         alt="not supported">
+                                </div>
+                                <div class="blog-2">
+                                    <br>
+                                    <p class="blog-p1 cont-blog">{{ article.Title }}</p>
+                                    <div class="like">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                        <span>{{ article.Views }}</span>
+                                    </div>
+
+                                    <div class="share">
+                                        <i class="fa fa-share-square-o" aria-hidden="true"></i>
+                                        <span>Share</span>
+                                    </div>
+                                    <br><br><br>
+                                    <div class="cont-blog-1">
+                                        {{ article.Description | markdown | safe }}
+                                        {% if article.HighlightText  is not None %}
+                                            <div class="inner-div">
+                                                <div class="div-2-inner">
+                                                    {{ article.HighlightText }}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------------------Section 1 ends------------------------------------>
+
+                    <br><br><br>
+
+                </div>
+
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <div class="article text-center">
+                        <p class="que">Why 5 Articles Daily ?</p>
+
+                        <button class="read art-read my-2 mx-auto"
+                                onclick="location.href='/articles/chunkConcept'">Read
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+
+
+{% endblock %}
